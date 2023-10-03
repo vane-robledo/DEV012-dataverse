@@ -336,7 +336,5 @@ export default [
         seaOfOrigin: "Grand Line",
         crewOrigin: "Piratas Red-Haired"
       }
-    }
-  ];
-  
-  
+
+];
