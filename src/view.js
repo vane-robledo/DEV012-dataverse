@@ -1,7 +1,13 @@
 export const renderItems = (data) => {
-  // eslint-disable-next-line no-console
-  console.log(data)
-  // Aquí comienza tu código y puedes retornar lo que tu necesites
-  return 'example';
+  const li = document.createElement("li");
+  li.innerHTML = data;
+  return li;
+
 };
+const arr = document.querySelector("ul");
+
+arr.appendChild(renderItems("Prueba1"))
+
+
+// eslint-disable-next-line no-console
 
