@@ -8,24 +8,24 @@
   <body>
     <header><h1>One Pedia</h1></header>
     <main >
-      <h2>
-        <label for="filter">Filter by:
-          <select name="options" id="">
-            <option value="sea">Sea of Origin</option>
+      <h2></h2>
+        <label for="options"></label>
+        <select name="options" data-testid="select-filter">
+          <option value="" disabled selected hidden>Filter By</option>  
+          <option value="sea">Sea of Origin</option>
             <option value="crew">Crew</option>
             <option value="status">Life Status</option>
-          </select>
-        </label>
-        <label for="a-to-z ">Sort by:
-          <select name="a-to-z" data-testid="select-sort">
+        </select>
+        <label for="a-to-z"></label>
+        <select name="a-to-z" data-testid="select-sort">
+          <option value="" disabled selected hidden>Sort by:</option>
           <option value="asc">Asc</option>
           <option value="desc">Desc</option>  
         </select>
-        </label>
+        <button data-testid="button-clear">Clear Selection</button>
       <section id="root">
         <ul></ul>
       </section>
-      </h2>
     </main>
     <footer></footer>
     <script src="main.js" type="module"></script>
