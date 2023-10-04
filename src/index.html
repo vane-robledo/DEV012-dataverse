@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header><h1>One Pedia</h1></header>
-    <main >
-      <h2></h2>
-        <label for="options"></label>
-        <select name="options" data-testid="select-filter">
-          <option value="" disabled selected hidden>Filter By</option>  
-          <option value="sea">Sea of Origin</option>
-            <option value="crew">Crew</option>
-            <option value="status">Life Status</option>
-        </select>
-        <label for="a-to-z"></label>
-        <select name="a-to-z" data-testid="select-sort">
-          <option value="" disabled selected hidden>Sort by:</option>
-          <option value="asc">Asc</option>
-          <option value="desc">Desc</option>  
-        </select>
-        <button data-testid="button-clear">Clear Selection</button>
+    <main>
+      <label for="options"></label>
+      <select name="options" data-testid="select-filter">
+        <option value="" disabled selected hidden>Filter By</option>
+        <option value="sea">Sea of Origin</option>
+        <option value="crew">Crew</option>
+        <option value="status">Life Status</option>
+      </select>
+      <label for="a-to-z"></label>
+      <select name="a-to-z" data-testid="select-sort">
+        <option value="" disabled selected hidden>Sort by:</option>
+        <option value="asc">Asc</option>
+        <option value="desc">Desc</option>
+      </select>
+      <button data-testid="button-clear">Clear Selection</button>
+      <h2>Personajes</h2>
       <section id="root">
         <ul></ul>
       </section>
     </main>
-    <footer></footer>
+    <footer>By Poto and Poop</footer>
     <script src="main.js" type="module"></script>
   </body>
 </html>
