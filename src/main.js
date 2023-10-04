@@ -3,6 +3,6 @@ import { renderItems } from './view.js';
 
 import data from './data/dataset.js';
 
-
-console.log(example, renderItems(data), data);
 // eslint-disable-next-line no-console
+console.log(example, renderItems(data), data);
+

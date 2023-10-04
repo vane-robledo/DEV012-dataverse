@@ -1,0 +1,70 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+header {
+    font-family: 'Metal Mania', cursive;
+    width: 100%;
+    height: 15vh;
+}
+
+.header-img{
+    width: 100%;
+}
+
+body {
+    background-color: #EAEAEA;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #D1A879;
+    width:290px;
+    height: 361px;
+    margin: 10px;
+}
+
+img{
+    width: 150px;
+    height: 200px;
+    padding: auto;
+}
+
+p{
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+ 
+
+@media (max-width: 425px) {
+
+ul{
+    display: flex;
+    flex-direction: column;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #D1A879;
+    width:290px;
+    height: 361px;
+    margin: 10px;
+}
+
+img{
+    width: 150px;
+    height: 200px;
+    padding: auto;
+}
+
+p{
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+ }

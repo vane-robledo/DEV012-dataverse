@@ -6,16 +6,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header><h1>One Pedia</h1></header>
+    <header><img src="/img/slack-imgs.png" alt="header-image" class="header-img"><h1>One Pedia</h1></header>
     <main>
-      <label for="options"></label>
+      <label for="options">Filter By</label>
       <select name="options" data-testid="select-filter">
-        <option value="" disabled selected hidden>Filter By</option>
+        <option value="" disabled selected hidden></option>
         <option value="sea">Sea of Origin</option>
         <option value="crew">Crew</option>
         <option value="status">Life Status</option>
       </select>
-      <label for="a-to-z"></label>
+      <label for="a-to-z">Sorty By: </label>
       <select name="a-to-z" data-testid="select-sort">
         <option value="" disabled selected hidden>Sort by:</option>
         <option value="asc">Asc</option>
@@ -24,7 +24,7 @@
       <button data-testid="button-clear">Clear Selection</button>
       <h2>Personajes</h2>
       <section id="root">
-        <ul></ul>
+        <ul itemscope itemtype="OnePiece"></ul>
       </section>
     </main>
     <footer>By Poto and Poop</footer>
