@@ -45,7 +45,7 @@ export default [
     description: "Usopp is the skilled sniper and storyteller of the Straw Hat Pirates.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/5/47237.jpg",
       facts: {
-      bounty: "200 Berries (initially)",
+      bounty: "30,000,000 Berries",
       status: "Alive",
       seaOfOrigin: "East Blue",
       crewOrigin: "Straw Hat Pirates"
@@ -216,32 +216,6 @@ export default [
       status: "Alive",
       seaOfOrigin: "Grand Line",
       crewOrigin: "Red-Haired Pirates"
-    }
-  },
-  {
-    id: "kaido",
-    name: "Kaido",
-    shortDescription: "The Terrifying Beast Yonko",
-    description: "Kaido is the terrifying Beast Yonko and one of the strongest beings in the world.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/2/367790.jpg?_gl=1*n0ypoa*_ga*ODUxOTU5MTIzLjE2OTQ3MDUzOTc.*_ga_26FEP9527K*MTY5NjM4NTc4MS4xMS4xLjE2OTYzODY4MjcuNTIuMC4w",
-    facts: {
-      bounty: "Unknown",
-      status: "Alive",
-      seaOfOrigin: "Grand Line",
-      crewOrigin: "Beast Pirates"
-    }
-  },
-  {
-    id: "big-mom",
-    name: "Charlotte Linlin (Big Mom)",
-    shortDescription: "The Dreaded Yonko Big Mom",
-    description: "Big Mom is the dreaded Yonko known for her insatiable appetite and her crew, the Big Mom Pirates.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/3/356309.jpg",
-    facts: {
-      bounty: "Unknown",
-      status: "Alive",
-      seaOfOrigin: "Grand Line",
-      crewOrigin: "Big Mom Pirates"
     }
   },
   {
