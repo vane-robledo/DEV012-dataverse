@@ -5,13 +5,12 @@ export const renderItems = (data) => {
     const arr = document.querySelector("ul");
 
     li.innerHTML = `
-      <h2 itemprop="name">${element.name}</h2>
+      <h3 itemprop="name">${element.name}</h3>
       <img src="${element.imageUrl}" alt="${element.id}">
       <p itemprop="description">${element.description}</p>
-      <p itemprop="bounty">${element.facts.bounty}</p>
+      <h4 itemprop="bounty">${element.facts.bounty}</h4>
       `;
     arr.appendChild(li);
     return arr;
   });
-
 };
