@@ -1,16 +1,20 @@
 export const renderItems = (data) => {
+  const ul = document.createElement("ul");
+  ul.setAttribute("itemscope", "");
+  ul.setAttribute("itemtype", "One Piece")
   data.forEach((element) => {
     const li = document.createElement("li");
     li.classList.add("cards")
-    const arr = document.querySelector("ul");
-
+    const arr = document.querySelector("#root")
+  
     li.innerHTML = `
       <h3 itemprop="name">${element.name}</h3>
       <img src="${element.imageUrl}" alt="${element.id}">
       <p itemprop="description">${element.description}</p>
       <h4 itemprop="bounty">${element.facts.bounty}</h4>
       `;
-    arr.appendChild(li);
-    return arr;
+    ul.appendChild(li);
+    arr.appendChild(ul)
   });
+  return ul;
 };
