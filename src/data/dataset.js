@@ -72,7 +72,7 @@ export default [
     facts: {
       bounty: "100 Berries",
       status: "Alive",
-      seaOfOrigin: "Drum Island",
+      seaOfOrigin: "Grand Line",
       crewOrigin: "Straw Hat Pirates"
     }
   },
@@ -81,7 +81,7 @@ export default [
     name: "Nico Robin",
     shortDescription: "Archaeologist and Devil Fruit Knowledge",
     description: "Robin is the enigmatic archaeologist with Devil Fruit knowledge in the Straw Hat Pirates.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/12/136849.jpg",    
+    imageUrl: "https://cdn.myanimelist.net/images/characters/12/136849.jpg",
     facts: {
       bounty: "130,000,000 Berries",
       status: "Alive",
@@ -94,11 +94,11 @@ export default [
     name: "Franky",
     shortDescription: "Shipwright and Cyborg",
     description: "Franky is the eccentric shipwright and cyborg in the Straw Hat Pirates.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/14/99237.jpg",    
+    imageUrl: "https://cdn.myanimelist.net/images/characters/14/99237.jpg",
     facts: {
       bounty: "94,000,000 Berries",
       status: "Alive",
-      seaOfOrigin: "Water 7",
+      seaOfOrigin: "Grand Line",
       crewOrigin: "Straw Hat Pirates"
     }
   },
@@ -107,12 +107,12 @@ export default [
     name: "Brook",
     shortDescription: "Skeletal Musician",
     description: "Brook is the cheerful skeletal musician in the Straw Hat Pirates.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/4/48093.jpg",    
+    imageUrl: "https://cdn.myanimelist.net/images/characters/4/48093.jpg",
     facts: {
       bounty: "83,000,000 Berries",
-      status: "Alive (undead)",
+      status: "Alive",
       seaOfOrigin: "West Blue",
-      crewOrigin: "Rumbar Pirates"
+      crewOrigin: "Straw Hat Pirates"
     }
   },
   {
@@ -120,19 +120,19 @@ export default [
     name: "Jimbei",
     shortDescription: "Former Pirate Captain and Martial Arts Expert",
     description: "Jimbei is the wise former pirate captain and martial arts expert in the Straw Hat Pirates.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/12/159071.jpg",    
+    imageUrl: "https://cdn.myanimelist.net/images/characters/12/159071.jpg",
     facts: {
       bounty: "250,000,000 Berries (previously)",
       status: "Alive",
-      seaOfOrigin: "Sun Pirates",
-      crewOrigin: "Sun Pirates"
+      seaOfOrigin: "Grand Line",
+      crewOrigin: "Straw Hat Pirates"
     }
   },{
     id: "jewelry-bonney",
     name: "Jewelry Bonney",
     shortDescription: "Pirate with the 'Sorosoro no Mi' Devil Fruit ability",
     description: "Jewelry Bonney is a pirate with the rare 'Sorosoro no Mi' Devil Fruit ability.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/13/52427.jpg",    
+    imageUrl: "https://cdn.myanimelist.net/images/characters/13/52427.jpg",
     facts: {
       bounty: "140,000,000 Berries",
       status: "Alive",
@@ -158,11 +158,11 @@ export default [
     name: "Gol D. Roger",
     shortDescription: "The legendary Pirate King",
     description: "Gol D. Roger is the legendary Pirate King and discoverer of the One Piece.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/5/432481.jpg",    
+    imageUrl: "https://cdn.myanimelist.net/images/characters/5/432481.jpg",
     facts: {
       bounty: "5,564,800,000 Berries",
       status: "Deceased",
-      seaOfOrigin: "Unknown",
+      seaOfOrigin: "East Blue",
       crewOrigin: "Roger Pirates"
     }
   },
@@ -210,7 +210,7 @@ export default [
     name: "Shanks",
     shortDescription: "The Powerful and Friendly Yonko",
     description: "Shanks is the charismatic and powerful Yonko known for his friendship with Luffy.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/12/78448.jpg",    
+    imageUrl: "https://cdn.myanimelist.net/images/characters/12/78448.jpg",
     facts: {
       bounty: "1,040,000,000 Berries",
       status: "Alive",
@@ -227,7 +227,7 @@ export default [
     facts: {
       bounty: "602,000,000 Berries",
       status: "Alive",
-      seaOfOrigin: "Sea of Knowledge",
+      seaOfOrigin: "East Blue",
       crewOrigin: "Revolutionaries"
     }
   },
@@ -252,7 +252,7 @@ export default [
     imageUrl: "https://cdn.myanimelist.net/images/characters/15/354400.jpg",
     facts: {
       bounty: "1,057,000,000 Berries",
-      status: "Deceased",
+      status: "Alive",
       seaOfOrigin: "New World",
       crewOrigin: "Big Mom Pirates"
     }
@@ -291,7 +291,7 @@ export default [
     imageUrl: "https://cdn.myanimelist.net/images/characters/12/96171.jpg",
     facts: {
       bounty: "340,000,000 Berries",
-      status: "Imprisoned",
+      status: "Alive",
       seaOfOrigin: "North Blue",
       crewOrigin: "Donquixote Pirates"
     }
@@ -305,7 +305,7 @@ export default [
     facts: {
       bounty: "80,000,000 Berries",
       status: "Alive",
-      seaOfOrigin: "Amazon Lily",
+      seaOfOrigin: "Grand Line",
       crewOrigin: "Kuja Pirates"
     }
   },

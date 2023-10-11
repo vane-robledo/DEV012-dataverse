@@ -1,6 +1,6 @@
 export const sortData = (data, sortBy, sortOrder) => {
   const sortAsc = data.sort((x, y) => {
-    if (x.name > y.name) {
+    if (x[sortBy] > y[sortBy]) {
       if (sortOrder === "asc") {
         return 1;
       } else {
@@ -15,24 +15,14 @@ export const sortData = (data, sortBy, sortOrder) => {
   return sortAsc;
 };
 
-export const sortBounty = (data, sortBy, sortOrder) => {
-  const dataFacts = data
-    .flatMap((element) => element.facts)
-    .map((element) => element.bounty);
-
-  const dataNumber = dataFacts.map((bounty) => {
-    const bountyWithDot = bounty.replace(/,/g, "");
-    return parseFloat(bountyWithDot);
-  });
-
-  const sortBountyOrder = dataNumber.sort((a, b) => {
-    if (sortOrder === "bounty-asc") {
-      return a - b;
-    } else if (sortOrder === "bounty-desc") {
-      return b - a;
+export const filterData = (data, filterBy, value) => {
+  return data.filter(item => {
+    if (item.facts[filterBy]) {
+      return item.facts[filterBy] === value;
     }
-    return 0;
+    return false;
   });
-  console.log(sortBountyOrder);
-  return sortBountyOrder;
-};
+}
+
+
+
