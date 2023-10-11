@@ -134,7 +134,7 @@ export default [
     description: "Jewelry Bonney is a pirate with the rare 'Sorosoro no Mi' Devil Fruit ability.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/13/52427.jpg",    
     facts: {
-      bounty: "Unknown",
+      bounty: "140,000,000 Berries",
       status: "Alive",
       seaOfOrigin: "Unknown",
       crewOrigin: "Bonney Pirates"
@@ -147,7 +147,7 @@ export default [
     description: "Buggy the Clown is the eccentric captain of the Buggy Pirates.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/8/38643.jpg",
     facts: {
-      bounty: "Unknown",
+      bounty: "15,000,000 Berries",
       status: "Alive",
       seaOfOrigin: "Unknown",
       crewOrigin: "Buggy Pirates"
@@ -160,23 +160,23 @@ export default [
     description: "Gol D. Roger is the legendary Pirate King and discoverer of the One Piece.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/5/432481.jpg",    
     facts: {
-      bounty: "Unknown",
+      bounty: "5,564,800,000 Berries",
       status: "Deceased",
       seaOfOrigin: "Unknown",
       crewOrigin: "Roger Pirates"
     }
   },
   {
-    id: "smoker",
-    name: "Smoker",
-    shortDescription: "Marine Vice Admiral",
-    description: "Smoker is the relentless Marine Vice Admiral known for pursuing pirates with his strong sense of justice.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/5/42615.jpg",    
+    id: "ace",
+    name: "Portgas D. Ace",
+    shortDescription: "Commander of the Spade Pirates",
+    description: "Portgas D. Ace was the commander of the Spade Pirates and the older brother of Monkey D. Luffy.",
+    imageUrl: "https://cdn.myanimelist.net/images/characters/4/391977.jpg",
     facts: {
-      bounty: "Unknown",
-      status: "Alive",
-      seaOfOrigin: "Grand Line",
-      crewOrigin: "Marines"
+      bounty: "550,000,000 Berries",
+      status: "Deceased",
+      seaOfOrigin: "Unknown",
+      crewOrigin: "Spade Pirates"
     }
   },
   {
@@ -199,7 +199,7 @@ export default [
     description: "Eustass Kid is the fearsome captain of the Kid Pirates and a user of the 'Jiki Jiki no Mi' Devil Fruit.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/3/48211.jpg?_gl=1*1gqozdd*_ga*ODUxOTU5MTIzLjE2OTQ3MDUzOTc.*_ga_26FEP9527K*MTY5NjM4NTc4MS4xMS4xLjE2OTYzODYwNzYuNTYuMC4w",
     facts: {
-      bounty: "Unknown",
+      bounty: "315,000,000 Berries",
       status: "Alive",
       seaOfOrigin: "South Blue",
       crewOrigin: "Kid Pirates"
@@ -212,7 +212,7 @@ export default [
     description: "Shanks is the charismatic and powerful Yonko known for his friendship with Luffy.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/12/78448.jpg",    
     facts: {
-      bounty: "Unknown",
+      bounty: "1,040,000,000 Berries",
       status: "Alive",
       seaOfOrigin: "Grand Line",
       crewOrigin: "Red-Haired Pirates"
@@ -225,7 +225,7 @@ export default [
     description: "Sabo is the brave second-in-command of the Revolutionary Army and Luffy's adoptive brother.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/15/131855.jpg",
     facts: {
-      bounty: "Unknown",
+      bounty: "602,000,000 Berries",
       status: "Alive",
       seaOfOrigin: "Sea of Knowledge",
       crewOrigin: "Revolutionaries"
@@ -264,7 +264,7 @@ export default [
     description: "Marshall D. Teach, also known as Blackbeard, is the master of chaos and captain of the Blackbeard Pirates.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/2/49735.jpg",
     facts: {
-      bounty: "Unknown",
+      bounty: "198,200,000 Berries",
       status: "Alive",
       seaOfOrigin: "Unknown",
       crewOrigin: "Blackbeard Pirates"
@@ -277,36 +277,36 @@ export default [
     description: "X Drake is a Marine Rear Admiral and former pirate who possesses the 'Ancient Zoan' type Devil Fruit ability.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/2/99553.jpg",
     facts: {
-      bounty: "Unknown",
+      bounty: "222,000,000 Berries",
       status: "Alive",
       seaOfOrigin: "Grand Line",
       crewOrigin: "Marines"
     }
   },
-{
-    id: "kizaru",
-    name: "Borsalino (Kizaru)",
-    shortDescription: "Marine Admiral and User of the 'Pika Pika no Mi' Devil Fruit",
-    description: "Borsalino, also known as Kizaru, is a Marine Admiral and user of the 'Pika Pika no Mi' Devil Fruit, granting him light-based powers.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/7/100669.jpg",
+  {
+    id: "donquixote-doflamingo",
+    name: "Donquixote Doflamingo",
+    shortDescription: "Former Shichibukai and King of Dressrosa",
+    description: "Donquixote Doflamingo is the former Shichibukai and former ruler of Dressrosa.",
+    imageUrl: "https://cdn.myanimelist.net/images/characters/12/96171.jpg",
     facts: {
-      bounty: "Unknown",
-      status: "Alive",
-      seaOfOrigin: "Grand Line",
-      crewOrigin: "Marines"
+      bounty: "340,000,000 Berries",
+      status: "Imprisoned",
+      seaOfOrigin: "North Blue",
+      crewOrigin: "Donquixote Pirates"
     }
   },
 {
-    id: "marco-the-phoenix",
-    name: "Marco the Phoenix",
-    shortDescription: "First Division Commander of the Whitebeard Pirates",
-    description: "Marco the Phoenix is the powerful First Division Commander of the Whitebeard Pirates, known for his regeneration abilities.",
-    imageUrl: "https://cdn.myanimelist.net/images/characters/11/100224.jpg",
+    id: "boa-hancock",
+    name: "Boa Hancock",
+    shortDescription: "Empress of the Kuja Pirates",
+    description: "Boa Hancock is the Empress of the Kuja Pirates and possesses the 'Mero Mero no Mi' Devil Fruit abilities.",
+    imageUrl: "https://cdn.myanimelist.net/images/characters/6/63017.jpg",
     facts: {
-      bounty: "Unknown",
+      bounty: "80,000,000 Berries",
       status: "Alive",
-      seaOfOrigin: "Grand Line",
-      crewOrigin: "Whitebeard Pirates"
+      seaOfOrigin: "Amazon Lily",
+      crewOrigin: "Kuja Pirates"
     }
-  }
+  },
 ];

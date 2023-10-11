@@ -1,4 +1,5 @@
-import { sortData } from './dataFunctions.js';
+import { sortData } from './dataFunctions.js';                                                                                                                                                     
+import { sortBounty } from './dataFunctions.js';
 import { renderItems } from './view.js';
 
 import data from './data/dataset.js';
@@ -10,10 +11,13 @@ const sort = document.querySelector('[data-testid="select-sort"]');
 
 sort.addEventListener("change", () => {
   const sortOrder = sort.value;
-  const sortedData = sortData(data,"name", sortOrder)
+  const sortedName = sortData(data,"name", sortOrder)
+  const sortedBounty = sortBounty(data, "bounty", sortOrder)
 
   rootRender.innerHTML = "";
-  const sortedList = renderItems(sortedData);
+  const sortedList = renderItems(sortedName);
+  const sortedBountyList = renderItems(sortedBounty);
   rootRender.appendChild(sortedList)
+  rootRender.appendChild(sortedBountyList)
 });
 
