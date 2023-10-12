@@ -7,9 +7,12 @@ const rootRender = document.querySelector("#root");
 rootRender.appendChild(renderItems(data));
 
 const sortName = document.querySelector('[data-testid="select-sort"]');
+// const sortBounty = document.querySelector('[data-testid="select-bounty"]')
 const filterOrigin = document.querySelector('[data-testid="select-filterOrigin"]');
 const filterCrew = document.querySelector('[data-testid="select-filter"]');
 const filterStatus = document.querySelector('[data-testid="select-filterStatus"]');
+const clearButton = document.querySelector('[data-testid="button-clear"]')
+
 
 sortName.addEventListener("change", () => {
   const sortOrder = sortName.value;
@@ -18,6 +21,14 @@ sortName.addEventListener("change", () => {
   const sortedList = renderItems(sortedName);
   rootRender.appendChild(sortedList)
 });
+
+// sortBounty.addEventListener("change", () => {
+//   const sortOrder = sortBounty.value;
+//   const sortedName = sortData(data, "facts.bounty", sortOrder)
+//   rootRender.innerHTML = "";
+//   const sortedList = renderItems(sortedName);
+//   rootRender.appendChild(sortedList)
+// });
 
 filterOrigin.addEventListener("change", () => {
   const value = filterOrigin.value;
@@ -43,3 +54,13 @@ filterStatus.addEventListener("change", () => {
 
   rootRender.appendChild(filteredList)
 })
+
+clearButton.addEventListener("click", () => {
+  filterOrigin.value = "";
+  filterCrew.value = "";
+  filterStatus.value = "";
+  sortName.value = "";
+  rootRender.innerHTML = "";
+  rootRender.appendChild(renderItems(data));
+})
+
