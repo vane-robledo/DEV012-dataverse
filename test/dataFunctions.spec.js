@@ -20,8 +20,8 @@ describe('sortData', () => {
       { name: "Eustass Kid" }
     ];
 
-    expect(sortData(names, "name", "asc")).toEqual(resultNames)
-    expect(sortData(names, "name", "desc")).toEqual(resultNames2)
+    expect(sortData(names, "name", "asc")).toStrictEqual(resultNames)
+    expect(sortData(names, "name", "desc")).toStrictEqual(resultNames2)
   });
 });
 
@@ -42,14 +42,21 @@ describe("sortBounty", () => {
       {facts: {bounty: 66000000}},
       {facts: {bounty: 30000000}},
     ];
-    expect(sortBounty(arrBounty, "asc")).toEqual(resultBounty);
-    expect(sortBounty(arrBounty, "desc")).toEqual(resultBounty2);
+    expect(sortBounty(arrBounty, "asc")).toStrictEqual(resultBounty);
+    expect(sortBounty(arrBounty, "desc")).toStrictEqual(resultBounty2);
   });
 });
 
 describe('filterData', () => {
 
   it('characters filtered by Crew', () => {
-    expect(filterData(crew, "crew", "Straw Hat Pirates")).toBe(sortBounty);
+    
+    const resultCrew = [
+      { facts: { crewOrigin: "Straw Hat Pirates" } },
+      { facts: { crewOrigin: "Straw Hat Pirates" } },
+      { facts: { crewOrigin: "Straw Hat Pirates" } },
+    ]
+
+    expect(filterData(crew, "crewOrigin", "Straw Hat Pirates")).toStrictEqual(resultCrew);
   });
 });
