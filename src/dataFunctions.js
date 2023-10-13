@@ -1,11 +1,21 @@
 export const sortData = (data, sortBy, sortOrder) => {
-  const sortedAsc = data.toSorted((a, b) => a[sortBy] > b[sortBy]);
-  const sortedDesc = data.toSorted((a, b) => a[sortBy] < b[sortBy]);
-  if (sortOrder === "asc") {
-    return sortedAsc;
-  } else {
-    return sortedDesc;
-  }
+  const sort = data.sort((x, y) => {
+
+    const valX = x[sortBy]
+    const valY = y[sortBy]
+
+    if (valX < valY) {
+      return sortOrder === "asc" ? -1 : 1;
+    }
+    if (valX > valY) {
+      return sortOrder === "asc" ? 1 : -1;
+
+    }
+    return 0;
+
+  });
+
+  return sort;
 };
 
 export const sortBounty = (data, sortOrder) => {
@@ -15,7 +25,7 @@ export const sortBounty = (data, sortOrder) => {
     return sortedBountyAsc;
   } else {
     return sortedBountyDesc;
-    
+
   }
 };
 
