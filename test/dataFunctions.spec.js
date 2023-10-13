@@ -1,19 +1,10 @@
 
-import { sortData } from '../src/dataFunctions.js';
-import { data as fakeData } from './data.js';
+import { sortData, filterData, sortBounty } from '../src/dataFunctions.js';
+import { names, crew, arrBounty } from './data.js';
 
 
 describe('sortData', () => {
-  it('returns characters sorted by name in ascending order`', () => {
-
-    // const names = [
-    //   { name: "Monkey D. Luffy" },
-    //   { name: "Eustass Kid" },
-    //   { name: "Nami" },
-    //   { name: "Roronoa Zoro" },
-    //   { name: "Sir Crocodile" }
-    // ];
-
+  it('returns characters sorted by name in ascending or descending order`', () => {
     const resultNames = [
       { name: "Eustass Kid" },
       { name: "Monkey D. Luffy" },
@@ -29,14 +20,36 @@ describe('sortData', () => {
       { name: "Eustass Kid" }
     ];
 
-    expect(sortData(fakeData, "name", "asc")).toEqual(resultNames)
-    expect(sortData(fakeData, "name", "desc")).toEqual(resultNames2)
+    expect(sortData(names, "name", "asc")).toEqual(resultNames)
+    expect(sortData(names, "name", "desc")).toEqual(resultNames2)
   });
 });
 
-// describe('anotherExample', () => {
+describe("sortBounty", () => {
+  it("returns bounty sorted by numbers in ascending order", () => {
 
-//   it('returns `anotherExample`', () => {
-//     expect(filterData()).toBe(sortBounty);
-//   });
-// });
+    const resultBounty = [
+      {facts: {bounty: 30000000}},
+      {facts: {bounty: 66000000}},
+      {facts: {bounty: 320000000}},
+      {facts: {bounty: 330000000}},
+      {facts: {bounty: 1500000000}},
+    ];
+    const resultBounty2 = [
+      {facts: {bounty: 1500000000}},
+      {facts: {bounty: 330000000}},
+      {facts: {bounty: 320000000}},
+      {facts: {bounty: 66000000}},
+      {facts: {bounty: 30000000}},
+    ];
+    expect(sortBounty(arrBounty, "asc")).toEqual(resultBounty);
+    expect(sortBounty(arrBounty, "desc")).toEqual(resultBounty2);
+  });
+});
+
+describe('filterData', () => {
+
+  it('characters filtered by Crew', () => {
+    expect(filterData(crew, "crew", "Straw Hat Pirates")).toBe(sortBounty);
+  });
+});

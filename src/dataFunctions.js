@@ -1,31 +1,37 @@
 export const sortData = (data, sortBy, sortOrder) => {
   const sort = data.sort((x, y) => {
-
     const valX = x[sortBy]
     const valY = y[sortBy]
-
-    if (valX < valY) {
-      return sortOrder === "asc" ? -1 : 1;
+    if(sortOrder === "asc") {
+      if(valX < valY)
+      {
+        return -1;
+      }
+      if (valX > valY) {
+        return  1;
+      }
     }
-    if (valX > valY) {
-      return sortOrder === "asc" ? 1 : -1;
-
+    else if(sortOrder === "desc") {
+      if(valX < valY)
+      {
+        return 1;
+      }
+      if (valX > valY) {
+        return  -1;
+      }
+    } else {
+      return 0;
     }
-    return 0;
-
   });
-
   return sort;
 };
-
 export const sortBounty = (data, sortOrder) => {
-  const sortedBountyAsc = data.toSorted((a, b) => a["facts"]["bounty"] > b["facts"]["bounty"]);
-  const sortedBountyDesc = data.toSorted((a, b) => a["facts"]["bounty"] < b["facts"]["bounty"]);
   if (sortOrder === "asc") {
-    return sortedBountyAsc;
+    return data.sort((a, b) => a.facts.bounty - b.facts.bounty);
+  } else if (sortOrder === "desc") {
+    return data.sort((a, b) => b.facts.bounty - a.facts.bounty);
   } else {
-    return sortedBountyDesc;
-
+    return data.sort((a, b) => a.facts.bounty - b.facts.bounty);
   }
 };
 
