@@ -14,3 +14,11 @@ export const arrBounty = [
   { facts: { bounty: 330000000 } }
 
 ];
+
+export const crew = [
+  { facts: { crewOrigin: "Straw Hat Pirates" } },
+  { facts: { crewOrigin: "Straw Hat Pirates" } },
+  { facts: { crewOrigin: "Straw Hat Pirates" } },
+  { facts: { crewOrigin: "Kid Pirates"} },
+  { facts: { crewOrigin: "Baroque Works" } }
+]
