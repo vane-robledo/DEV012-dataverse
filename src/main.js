@@ -1,4 +1,4 @@
-import { sortData,filterData } from './dataFunctions.js';
+import { sortData,filterData, sortBounty } from './dataFunctions.js';
 import { renderItems } from './view.js';
 
 import data from './data/dataset.js';
@@ -7,7 +7,7 @@ const rootRender = document.querySelector("#root");
 rootRender.appendChild(renderItems(data));
 
 const sortName = document.querySelector('[data-testid="select-sort"]');
-// const sortBounty = document.querySelector('[data-testid="select-bounty"]')
+const sortedBounty = document.querySelector('[data-testid="select-bounty"]')
 const filterOrigin = document.querySelector('[data-testid="select-filterOrigin"]');
 const filterCrew = document.querySelector('[data-testid="select-filter"]');
 const filterStatus = document.querySelector('[data-testid="select-filterStatus"]');
@@ -22,13 +22,13 @@ sortName.addEventListener("change", () => {
   rootRender.appendChild(sortedList)
 });
 
-// sortBounty.addEventListener("change", () => {
-//   const sortOrder = sortBounty.value;
-//   const sortedName = sortData(data, "facts.bounty", sortOrder)
-//   rootRender.innerHTML = "";
-//   const sortedList = renderItems(sortedName);
-//   rootRender.appendChild(sortedList)
-// });
+sortedBounty.addEventListener("change", () => {
+  const sortOrder = sortedBounty.value;
+  const sortedName = sortBounty(data, sortOrder)
+  rootRender.innerHTML = "";
+  const sortedList = renderItems(sortedName);
+  rootRender.appendChild(sortedList)
+});
 
 filterOrigin.addEventListener("change", () => {
   const value = filterOrigin.value;
@@ -60,6 +60,7 @@ clearButton.addEventListener("click", () => {
   filterCrew.value = "";
   filterStatus.value = "";
   sortName.value = "";
+  sortedBounty.value = "";
   rootRender.innerHTML = "";
   rootRender.appendChild(renderItems(data));
 })
