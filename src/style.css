@@ -64,13 +64,14 @@ div{
 label {
     font-family: "Metal Mania", cursive;
     font-size: 20px;
-    width: 60%;
-    margin-top: 10px;
-    margin-left: 5px;
+    width: fit-content;
+    margin-top: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 select {
-    width: 70%;
+    width: 10%;
     height: 70%;
     margin-top: 8px;
 }
@@ -84,15 +85,15 @@ select {
 button[data-testid="button-clear"] {
     font-family: "Metal Mania", cursive;
     font-size: 20px;
-    width: 30%;
+    width: 10%;
     height: 70%;
-    margin: 8px 5px 5px 5px;
+    margin: 8px 5px 5px 10px;
 }
 
 .button {
     font-family: "Metal Mania", cursive;
     font-size: 24px;
-    width: 50%;
+    width: 10%;
     height: 70%;
     margin: 8px 15px 5px 15px;
 }
