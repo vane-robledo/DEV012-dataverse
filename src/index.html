@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <title>One Pedia</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <header>
     <h1>One Pedia</h1>
@@ -47,7 +45,6 @@
             <option value="Buggy Pirates">Buggy Pirates</option>
             <option value="Bonney Pirates">Bonney Pirates</option>
           </select>
-          
           <label for="status">Filter:</label>
           <select id="status" name="status" data-testid="select-filterStatus">
             <option disabled selected value="">Select Status</option>
@@ -67,18 +64,16 @@
             <option value="desc">Highest</option>
           </select>
           <button data-testid="button-clear">Clear</button>
-          <button class="button">Facts</button>
+          <button id="facts" class="button">Facts</button>
         </div>
       </nav>
     </section>
-    
     <h2>Characters</h2>
     <section id="root">
       <ul itemscope itemtype="OnePiece"></ul>
     </section>
   </main>
-  <footer>By Poto and Poop</footer>
+  <footer>Div y Vane</footer>
   <script src="main.js" type="module"></script>
 </body>
-
 </html>
