@@ -41,9 +41,11 @@ export const filterData = (data, filterBy, value) => {
   });
 };
 
-export const computeStats = (data) => {
-  const reduceData = data.reduce((poop, data) => {
-    return poop + data.facts
-  }, 0);
-  console.log(reduceData)
+export const computeStats = (data, targetProperty, targetValue) => {
+  const mapped = data.map (element => element.facts[targetProperty] === targetValue ? 1:0);
+  const reduceData = mapped.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  const percentage = (reduceData / data.length) * 100;
+
+  return percentage;
+  
 };

@@ -1,64 +1,76 @@
-export const renderItems = (data) => {
-  const ul = document.createElement("ul");
-  data.forEach((element) => {
-    const li = document.createElement("li");
-    li.setAttribute("itemscope", "");
-    li.setAttribute("itemtype", "One Piece");
-    li.classList.add("cards");
-    li.innerHTML = `
-    <h3 itemprop="name">${element.name}</h3>
-    <img src="${element.imageUrl}" alt="${element.id}">
-    <p itemprop="description">${element.description}</p>
-    <h4 itemprop="bounty">${element.facts.bounty} Berries</h4>
-    `;
-    const root = document.querySelector("#root");
-    ul.appendChild(li);
-    root.appendChild(ul);
-  });
-  return ul;
-};
-export const renderStats = () => {
-  const root = document.querySelector("#root");
-  const ul = document.createElement("ul");
-  //Render Origin Card
-  const liOrigin = document.createElement("li");
-  liOrigin.classList.add("cards");
-  const h3Origin = document.createElement("h3");
-  h3Origin.innerHTML = "Origin Fact";
-  const imgOrigin = document.createElement("img");
-  imgOrigin.classList.add("img-origin");
-  const pOrigin = document.createElement("p");
-  pOrigin.id = "origin";
-  liOrigin.appendChild(h3Origin);
-  liOrigin.appendChild(imgOrigin);
-  liOrigin.appendChild(pOrigin);
-  ul.appendChild(liOrigin);
-  //Render Crew Card
-  const liCrew = document.createElement("li");
-  liCrew.classList.add("cards");
-  const h3Crew = document.createElement("h3");
-  h3Crew.innerHTML = "Crew Fact";
-  const imgCrew = document.createElement("img");
-  imgCrew.classList.add("img-crew");
-  const pCrew = document.createElement("p");
-  pCrew.id = "crew";
-  liCrew.appendChild(h3Crew);
-  liCrew.appendChild(imgCrew);
-  liCrew.appendChild(pCrew);
-  ul.appendChild(liCrew);
-  //Render Bounty Card
-  const liBounty = document.createElement("li");
-  liBounty.classList.add("cards");
-  const h3Bounty = document.createElement("h3");
-  h3Bounty.innerHTML = "Bounty Fact";
-  const imgBounty = document.createElement("img");
-  imgBounty.classList.add("img-Bounty");
-  const pBounty = document.createElement("p");
-  pBounty.id = "bounty";
-  liBounty.appendChild(h3Bounty);
-  liBounty.appendChild(imgBounty);
-  liBounty.appendChild(pBounty);
-  ul.appendChild(liBounty);
-  root.appendChild(ul);
-  return ul;
-};
+import {
+  sortData,
+  filterData,
+  sortBounty,
+  computeStats,
+} from "./dataFunctions.js";
+import { renderItems, renderStats } from "./view.js";
+import data from "./data/dataset.js";
+const rootRender = document.querySelector("#root");
+rootRender.appendChild(renderItems(data));
+const sortName = document.querySelector('[data-testid="select-sort"]');
+const sortedBounty = document.querySelector('[data-testid="select-bounty"]');
+const filterOrigin = document.querySelector(
+  '[data-testid="select-filterOrigin"]'
+);
+const filterCrew = document.querySelector('[data-testid="select-filter"]');
+const filterStatus = document.querySelector(
+  '[data-testid="select-filterStatus"]'
+);
+const clearButton = document.querySelector('[data-testid="button-clear"]');
+const factsButton = document.getElementById("facts");
+
+
+sortName.addEventListener("change", () => {
+  const sortOrder = sortName.value;
+  const sortedName = sortData(data, "name", sortOrder);
+  rootRender.innerHTML = "";
+  const sortedList = renderItems(sortedName);
+  rootRender.appendChild(sortedList);
+});
+sortedBounty.addEventListener("change", () => {
+  const sortOrder = sortedBounty.value;
+  const sortedName = sortBounty(data, sortOrder);
+  rootRender.innerHTML = "";
+  const sortedList = renderItems(sortedName);
+  rootRender.appendChild(sortedList);
+});
+filterOrigin.addEventListener("change", () => {
+  const value = filterOrigin.value;
+  const filteredOrigin = filterData(data, "seaOfOrigin", value);
+  rootRender.innerHTML = "";
+  const filteredList = renderItems(filteredOrigin);
+  rootRender.appendChild(filteredList);
+});
+filterCrew.addEventListener("change", () => {
+  const value = filterCrew.value;
+  const filteredCrew = filterData(data, "crewOrigin", value);
+  rootRender.innerHTML = "";
+  const filteredList = renderItems(filteredCrew);
+  rootRender.appendChild(filteredList);
+});
+filterStatus.addEventListener("change", () => {
+  const value = filterStatus.value;
+  const filteredStatus = filterData(data, "status", value);
+  rootRender.innerHTML = "";
+  const filteredList = renderItems(filteredStatus);
+  rootRender.appendChild(filteredList);
+});
+clearButton.addEventListener("click", () => {
+  filterOrigin.value = "";
+  filterCrew.value = "";
+  filterStatus.value = "";
+  sortName.value = "";
+  sortedBounty.value = "";
+  rootRender.innerHTML = "";
+  rootRender.appendChild(renderItems(data));
+});
+
+factsButton.addEventListener("click", () => {
+  rootRender.innerHTML = "";
+  rootRender.appendChild(renderStats());
+  const origen = document.querySelector("#idOrigin");
+  const targetSeaOfOrigin = "East Blue"
+  origen.textContent = computeStats(data, "seaOfOrigin", targetSeaOfOrigin);
+
+});

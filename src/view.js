@@ -28,7 +28,7 @@ export const renderStats = () => {
   const imgOrigin = document.createElement("img");
   imgOrigin.classList.add("img-origin");
   const pOrigin = document.createElement("p");
-  pOrigin.id = "origin";
+  pOrigin.id = "idOrigin";
   liOrigin.appendChild(h3Origin);
   liOrigin.appendChild(imgOrigin);
   liOrigin.appendChild(pOrigin);
@@ -41,7 +41,7 @@ export const renderStats = () => {
   const imgCrew = document.createElement("img");
   imgCrew.classList.add("img-crew");
   const pCrew = document.createElement("p");
-  pCrew.id = "crew";
+  pCrew.id = "idCrew";
   liCrew.appendChild(h3Crew);
   liCrew.appendChild(imgCrew);
   liCrew.appendChild(pCrew);
@@ -54,7 +54,7 @@ export const renderStats = () => {
   const imgBounty = document.createElement("img");
   imgBounty.classList.add("img-Bounty");
   const pBounty = document.createElement("p");
-  pBounty.id = "bounty";
+  pBounty.id = "idBounty";
   liBounty.appendChild(h3Bounty);
   liBounty.appendChild(imgBounty);
   liBounty.appendChild(pBounty);
