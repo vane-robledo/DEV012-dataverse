@@ -1,38 +1,59 @@
 export const sortData = (data, sortBy, sortOrder) => {
-  const sortAsc = data.sort((x, y) => {
-    if (x.name > y.name) {
-      if (sortOrder === "asc") {
-        return 1;
-      } else {
+  const sort = data.sort((x, y) => {
+    const valX = x[sortBy];
+    const valY = y[sortBy];
+    if (sortOrder === "asc") {
+      if (valX < valY) {
         return -1;
       }
+      if (valX > valY) {
+        return 1;
+      }
+    } else if (sortOrder === "desc") {
+      if (valX < valY) {
+        return 1;
+      }
+      if (valX > valY) {
+        return -1;
+      }
+    } else {
+      return 0;
     }
-    return 0;
   });
-  if (sortOrder === "desc") {
-    sortAsc.reverse();
-  }
-  return sortAsc;
+  return sort;
 };
 
-export const sortBounty = (data, sortBy, sortOrder) => {
-  const dataFacts = data
-    .flatMap((element) => element.facts)
-    .map((element) => element.bounty);
+export const sortBounty = (data, sortOrder) => {
+  if (sortOrder === "asc") {
+    return data.sort((a, b) => a.facts.bounty - b.facts.bounty);
+  } else if (sortOrder === "desc") {
+    return data.sort((a, b) => b.facts.bounty - a.facts.bounty);
+  } else {
+    return data.sort((a, b) => a.facts.bounty - b.facts.bounty);
+  }
+};
 
-  const dataNumber = dataFacts.map((bounty) => {
-    const bountyWithDot = bounty.replace(/,/g, "");
-    return parseFloat(bountyWithDot);
-  });
-
-  const sortBountyOrder = dataNumber.sort((a, b) => {
-    if (sortOrder === "bounty-asc") {
-      return a - b;
-    } else if (sortOrder === "bounty-desc") {
-      return b - a;
+export const filterData = (data, filterBy, value) => {
+  return data.filter((item) => {
+    if (item.facts[filterBy]) {
+      return item.facts[filterBy] === value;
     }
-    return 0;
+    return false;
   });
-  console.log(sortBountyOrder);
-  return sortBountyOrder;
+};
+
+export const computeStats = (data, targetProperty, targetValue) => {
+  const mapped = data.map (element => element.facts[targetProperty] === targetValue ? 1:0);
+  const reduceData = mapped.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  const percentage = (reduceData / data.length) * 100;
+
+  return percentage.toFixed(2);
+};
+
+export const computeStatsBounty = (data, targetProperty, targetValue) => {
+  const mapped = data.map (element => element.facts[targetProperty] >= targetValue ? 1:0);
+  const reduceData = mapped.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  const percentage = (reduceData / data.length) * 100;
+
+  return percentage.toFixed(2);
 };
