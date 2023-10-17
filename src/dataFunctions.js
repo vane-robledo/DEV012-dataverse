@@ -22,6 +22,7 @@ export const sortData = (data, sortBy, sortOrder) => {
   });
   return sort;
 };
+
 export const sortBounty = (data, sortOrder) => {
   if (sortOrder === "asc") {
     return data.sort((a, b) => a.facts.bounty - b.facts.bounty);
@@ -46,6 +47,13 @@ export const computeStats = (data, targetProperty, targetValue) => {
   const reduceData = mapped.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   const percentage = (reduceData / data.length) * 100;
 
-  return percentage;
-  
+  return percentage.toFixed(2);
+};
+
+export const computeStatsBounty = (data, targetProperty, targetValue) => {
+  const mapped = data.map (element => element.facts[targetProperty] >= targetValue ? 1:0);
+  const reduceData = mapped.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  const percentage = (reduceData / data.length) * 100;
+
+  return percentage.toFixed(2);
 };

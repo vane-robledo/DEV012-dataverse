@@ -3,6 +3,7 @@ import {
   filterData,
   sortBounty,
   computeStats,
+  computeStatsBounty
 } from "./dataFunctions.js";
 import { renderItems, renderStats } from "./view.js";
 import data from "./data/dataset.js";
@@ -19,6 +20,7 @@ const filterStatus = document.querySelector(
 );
 const clearButton = document.querySelector('[data-testid="button-clear"]');
 const factsButton = document.getElementById("facts");
+const charactersTitle = document.querySelector("h2")
 
 
 sortName.addEventListener("change", () => {
@@ -68,9 +70,18 @@ clearButton.addEventListener("click", () => {
 
 factsButton.addEventListener("click", () => {
   rootRender.innerHTML = "";
+  charactersTitle.innerHTML = "Facts"
   rootRender.appendChild(renderStats());
   const origen = document.querySelector("#idOrigin");
   const targetSeaOfOrigin = "East Blue"
-  origen.textContent = computeStats(data, "seaOfOrigin", targetSeaOfOrigin);
+  origen.innerHTML = "Did you know that " + computeStats(data, "seaOfOrigin", targetSeaOfOrigin) + "% of the characters come from East Blue.";
+
+  const crew = document.querySelector("#idCrew");
+  const targetCrew = "Straw Hat Pirates"
+  crew.innerHTML = "Did you know that " + computeStats(data, "crewOrigin", targetCrew) + "% of the characters are from Luffy's crew (Straw Hat Pirates)."
+
+  const bounty = document.querySelector("#idBounty");
+  const targetBounty = 315000000
+  bounty.innerHTML = "Did you know that " + computeStatsBounty(data, "bounty", targetBounty) + "% of the characters have a bounty over 315,000,000."
 
 });
