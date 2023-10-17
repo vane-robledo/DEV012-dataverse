@@ -1,23 +1,20 @@
 export const sortData = (data, sortBy, sortOrder) => {
   const sort = data.sort((x, y) => {
-    const valX = x[sortBy]
-    const valY = y[sortBy]
-    if(sortOrder === "asc") {
-      if(valX < valY)
-      {
+    const valX = x[sortBy];
+    const valY = y[sortBy];
+    if (sortOrder === "asc") {
+      if (valX < valY) {
         return -1;
       }
       if (valX > valY) {
-        return  1;
+        return 1;
       }
-    }
-    else if(sortOrder === "desc") {
-      if(valX < valY)
-      {
+    } else if (sortOrder === "desc") {
+      if (valX < valY) {
         return 1;
       }
       if (valX > valY) {
-        return  -1;
+        return -1;
       }
     } else {
       return 0;
@@ -42,4 +39,11 @@ export const filterData = (data, filterBy, value) => {
     }
     return false;
   });
+};
+
+export const computeStats = (data) => {
+  const reduceData = data.reduce((poop, data) => {
+    return poop + data.facts
+  }, 0);
+  console.log(reduceData)
 };

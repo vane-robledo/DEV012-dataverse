@@ -1,6 +1,7 @@
-import { sortData,filterData, sortBounty } from './dataFunctions.js';
+import { sortData,filterData, sortBounty, } from './dataFunctions.js';
 import { renderItems, renderStats } from './view.js';
 import data from './data/dataset.js';
+
 const rootRender = document.querySelector("#root");
 rootRender.appendChild(renderItems(data));
 const sortName = document.querySelector('[data-testid="select-sort"]');
@@ -9,7 +10,9 @@ const filterOrigin = document.querySelector('[data-testid="select-filterOrigin"]
 const filterCrew = document.querySelector('[data-testid="select-filter"]');
 const filterStatus = document.querySelector('[data-testid="select-filterStatus"]');
 const clearButton = document.querySelector('[data-testid="button-clear"]');
-const statsButton = document.getElementById("facts");
+const factsButton = document.getElementById("facts");
+const showStatsButton = document.querySelectorAll(".more-info")
+
 sortName.addEventListener("change", () => {
   const sortOrder = sortName.value;
   const sortedName = sortData(data, "name", sortOrder)
@@ -54,7 +57,13 @@ clearButton.addEventListener("click", () => {
   rootRender.innerHTML = "";
   rootRender.appendChild(renderItems(data));
 })
-statsButton.addEventListener("click", () => {
+factsButton.addEventListener("click", () => {
   rootRender.innerHTML = "";
   rootRender.appendChild(renderStats());
+})
+
+
+
+showStatsButton.addEventListener ("click", () => {
+  console.log("poop");
 })

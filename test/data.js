@@ -22,3 +22,17 @@ export const crew = [
   { facts: { crewOrigin: "Kid Pirates"} },
   { facts: { crewOrigin: "Baroque Works" } }
 ]
+
+export const data = [ {
+  id: "buggy",
+  name: "Buggy the Clown",
+  shortDescription: "Captain of the Buggy Pirates",
+  description: "Buggy the Clown is the eccentric captain of the Buggy Pirates.",
+  imageUrl: "https://cdn.myanimelist.net/images/characters/8/38643.jpg",
+  facts: {
+    bounty: 15000000,
+    status: "Alive",
+    seaOfOrigin: "Unknown",
+    crewOrigin: "Buggy Pirates"
+  }
+}]
