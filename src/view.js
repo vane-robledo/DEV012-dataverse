@@ -1,9 +1,10 @@
 export const renderItems = (data) => {
   const ul = document.createElement("ul");
-  ul.setAttribute("itemscope", "");
-  ul.setAttribute("itemtype", "One Piece");
+  
   data.forEach((element) => {
     const li = document.createElement("li");
+    li.setAttribute("itemscope", "");
+    li.setAttribute("itemtype", "One Piece");
     li.classList.add("cards");
     li.innerHTML = `
     <h3 itemprop="name">${element.name}</h3>
