@@ -11,7 +11,7 @@ const filterCrew = document.querySelector('[data-testid="select-filter"]');
 const filterStatus = document.querySelector('[data-testid="select-filterStatus"]');
 const clearButton = document.querySelector('[data-testid="button-clear"]');
 const factsButton = document.getElementById("facts");
-const showStatsButton = document.querySelectorAll(".more-info")
+const showStatsButton = document.querySelector(".more-info")
 
 sortName.addEventListener("change", () => {
   const sortOrder = sortName.value;
