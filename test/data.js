@@ -19,11 +19,11 @@ export const crew = [
   { facts: { crewOrigin: "Straw Hat Pirates" } },
   { facts: { crewOrigin: "Straw Hat Pirates" } },
   { facts: { crewOrigin: "Straw Hat Pirates" } },
-  { facts: { crewOrigin: "Kid Pirates"} },
+  { facts: { crewOrigin: "Kid Pirates" } },
   { facts: { crewOrigin: "Baroque Works" } }
 ]
 
-export const data = [ {
+export const data = [{
   id: "buggy",
   name: "Buggy the Clown",
   shortDescription: "Captain of the Buggy Pirates",
@@ -36,3 +36,11 @@ export const data = [ {
     crewOrigin: "Buggy Pirates"
   }
 }]
+
+export const origin = [
+  { facts: { seaOfOrigin: "East Blue", crewOrigin: "Straw Hat Pirates" } },
+  { facts: { seaOfOrigin: "East Blue", crewOrigin: "Straw Hat Pirates" } },
+  { facts: { seaOfOrigin: "East Blue", crewOrigin: "Straw Hat Pirates" } },
+  { facts: { seaOfOrigin: "North Blue", crewOrigin: "Straw Hat Pirates" } },
+  { facts: { seaOfOrigin: "Grand Line", crewOrigin: "Straw Hat Pirates" } }
+]

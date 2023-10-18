@@ -1,9 +1,9 @@
 
-import { sortData, filterData, sortBounty } from '../src/dataFunctions.js';
-import { names, crew, arrBounty } from './data.js';
+import { sortData, filterData, sortBounty, computeStats,computeStatsBounty } from '../src/dataFunctions.js';
+import { names, crew, arrBounty,origin } from './data.js';
 
 
-describe('sortData', () => {
+describe("sortData", () => {
   it('returns characters sorted by name in ascending or descending order`', () => {
     const resultNames = [
       { name: "Eustass Kid" },
@@ -47,7 +47,7 @@ describe("sortBounty", () => {
   });
 });
 
-describe('filterData', () => {
+describe("filterData", () => {
 
   it('characters filtered by Crew', () => {
     
@@ -58,5 +58,21 @@ describe('filterData', () => {
     ]
 
     expect(filterData(crew, "crewOrigin", "Straw Hat Pirates")).toStrictEqual(resultCrew);
+  });
+});
+describe("computeStats", () => {
+
+  it("percentage of characters from East Blue and from Straw Hat Pirates crew", () => {
+
+    expect(computeStats(origin, "seaOfOrigin", "East Blue")).toStrictEqual("60.00");
+    expect(computeStats(origin, "crewOrigin", "Straw Hat Pirates")).toStrictEqual("100.00");
+    
+  });
+});
+describe("computeStatsBounty", () => {
+
+  it("percentage of characters whose bounty is over 315000000", () => {
+
+    expect(computeStatsBounty(arrBounty, "seaOfOrigin", 315000000)).toStrictEqual("0.00");
   });
 });

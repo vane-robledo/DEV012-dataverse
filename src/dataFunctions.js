@@ -42,16 +42,16 @@ export const filterData = (data, filterBy, value) => {
   });
 };
 
-export const computeStats = (data, targetProperty, targetValue) => {
-  const mapped = data.map (element => element.facts[targetProperty] === targetValue ? 1:0);
+export const computeStats = (data, property, value) => {
+  const mapped = data.map (element => element.facts[property] === value ? 1:0);
   const reduceData = mapped.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   const percentage = (reduceData / data.length) * 100;
 
   return percentage.toFixed(2);
 };
 
-export const computeStatsBounty = (data, targetProperty, targetValue) => {
-  const mapped = data.map (element => element.facts[targetProperty] >= targetValue ? 1:0);
+export const computeStatsBounty = (data, property, value) => {
+  const mapped = data.map (element => element.facts[property] >= value ? 1:0);
   const reduceData = mapped.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   const percentage = (reduceData / data.length) * 100;
 
