@@ -21,7 +21,6 @@ const filterStatus = document.querySelector(
 const clearButton = document.querySelector('[data-testid="button-clear"]');
 const factsButton = document.getElementById("facts");
 const charactersTitle = document.querySelector("h2")
-
 filterOrigin.addEventListener("change", () => {
   const value = filterOrigin.value;
   const filteredOrigin = filterData(data, "seaOfOrigin", value);
@@ -42,9 +41,7 @@ filterStatus.addEventListener("change", () => {
   rootRender.innerHTML = "";
   const filteredList = renderItems(filteredStatus);
   rootRender.appendChild(filteredList);
-
 });
-
 sortName.addEventListener("change", () => {
   let value;
   let filterBy;
@@ -63,20 +60,14 @@ sortName.addEventListener("change", () => {
   else if (statusValue !== "") {
     value = statusValue
     filterBy = "status"
-
   }
-
   const filtered = filterData(data, filterBy, value);
   const sortedName = sortData(filtered, "name", sortOrder);
   rootRender.innerHTML = "";
   const sortedList = renderItems(sortedName);
   rootRender.appendChild(sortedList);
 }
-
 );
-
-
-
 sortedBounty.addEventListener("change", () => {
   let value;
   let filterBy;
@@ -95,18 +86,28 @@ sortedBounty.addEventListener("change", () => {
   else if (statusValue !== "") {
     value = statusValue
     filterBy = "status"
-
   }
-
   const filtered = filterData(data, filterBy, value);
   const sortedName = sortData(filtered, "name", sortOrder);
+  const prueba = sortBounty(data, sortOrder)
   let filterSortNameData;
+  if (filterSortNameData === " ") {
+    filterSortNameData = prueba;
+  }
   if (filtered && sortedName !== " ") {
     filterSortNameData = filtered && sortedName;
   }
-  const sortedBountyResult = sortBounty(filterSortNameData, sortOrder);
+  //seleccionar qué se renderizará
+  let renderBounty;
+  if (filterSortNameData === " ") {
+    renderBounty = prueba;
+  }
+  if (prueba === " ") {
+    renderBounty = filterSortNameData;
+  }
+  // const sortedBountyResult = sortBounty(filterSortNameData, sortOrder);
   rootRender.innerHTML = "";
-  const sortedList = renderItems(sortedBountyResult);
+  const sortedList = renderItems(renderBounty);
   rootRender.appendChild(sortedList);
 });
 clearButton.addEventListener("click", () => {
@@ -118,20 +119,14 @@ clearButton.addEventListener("click", () => {
   rootRender.innerHTML = "";
   rootRender.appendChild(renderItems(data));
 });
-
-factsButton.addEventListener("click", (e) => {
-  e.preventDefault;
+factsButton.addEventListener("click", () => {
   rootRender.innerHTML = "";
   charactersTitle.innerHTML = "Facts"
   rootRender.appendChild(renderStats());
   const origen = document.querySelector("#idOrigin");
   origen.innerHTML = "Did you know that " + computeStats(data, "seaOfOrigin", "East Blue") + "% of the characters come from East Blue.";
-
   const crew = document.querySelector("#idCrew");
-
   crew.innerHTML = "Did you know that " + computeStats(data, "crewOrigin", "Straw Hat Pirates") + "% of the characters are from Luffy's crew (Straw Hat Pirates)."
-
   const bounty = document.querySelector("#idBounty");
   bounty.innerHTML = "Did you know that " + computeStatsBounty(data, "bounty", "315,000,000") + "% of the characters have a bounty over 315,000,000."
-
 });

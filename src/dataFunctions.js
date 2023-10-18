@@ -22,7 +22,6 @@ export const sortData = (data, sortBy, sortOrder) => {
   });
   return sort;
 };
-
 // export const sortBounty = (data, sortOrder) => {
 //   const bounty = parseFloat(data.facts["bounty"]);
 //   console.log(bounty);
@@ -34,7 +33,6 @@ export const sortData = (data, sortBy, sortOrder) => {
 //     return data.sort((a, b) => a[bounty] - b[bounty]);
 //   }
 // };
-
 export const sortBounty = (data, sortOrder) => {
   const sortedCharacters = data.sort((a, b) => {
     const bountyA = parseInt(a.facts.bounty.replace(/[^0-9]/g, ''), 10);
@@ -45,11 +43,8 @@ export const sortBounty = (data, sortOrder) => {
       return bountyB - bountyA;
     }
   });
-  console.log(sortedCharacters)
   return sortedCharacters;
 };
-
-
 export const filterData = (data, filterBy, value) => {
   return data.filter((item) => {
     if (item.facts[filterBy]) {
@@ -58,19 +53,15 @@ export const filterData = (data, filterBy, value) => {
     return false;
   });
 };
-
 export const computeStats = (data, property, value) => {
   const mapped = data.map(element => element.facts[property] === value ? 1 : 0);
   const reduceData = mapped.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   const percentage = (reduceData / data.length) * 100;
-
   return percentage.toFixed(2);
 };
-
 export const computeStatsBounty = (data, property, value) => {
   const mapped = data.map(element => element.facts[property] >= value ? 1 : 0);
   const reduceData = mapped.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   const percentage = (reduceData / data.length) * 100;
-
   return percentage.toFixed(2);
 };
