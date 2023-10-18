@@ -42,6 +42,7 @@ filterStatus.addEventListener("change", () => {
   rootRender.innerHTML = "";
   const filteredList = renderItems(filteredStatus);
   rootRender.appendChild(filteredList);
+
 });
 
 sortName.addEventListener("change", () => {
@@ -101,7 +102,7 @@ sortedBounty.addEventListener("change", () => {
   const sortedName = sortData(filtered, "name", sortOrder);
   let filterSortNameData;
   if (filtered && sortedName !== " ") {
-    filterSortNameData = filtered && sortedName;  
+    filterSortNameData = filtered && sortedName;
   }
   const sortedBountyResult = sortBounty(filterSortNameData, sortOrder);
   rootRender.innerHTML = "";
@@ -118,7 +119,8 @@ clearButton.addEventListener("click", () => {
   rootRender.appendChild(renderItems(data));
 });
 
-factsButton.addEventListener("click", () => {
+factsButton.addEventListener("click", (e) => {
+  e.preventDefault;
   rootRender.innerHTML = "";
   charactersTitle.innerHTML = "Facts"
   rootRender.appendChild(renderStats());
@@ -130,7 +132,6 @@ factsButton.addEventListener("click", () => {
   crew.innerHTML = "Did you know that " + computeStats(data, "crewOrigin", "Straw Hat Pirates") + "% of the characters are from Luffy's crew (Straw Hat Pirates)."
 
   const bounty = document.querySelector("#idBounty");
-  const targetBounty = 315000000
-  bounty.innerHTML = "Did you know that " + computeStatsBounty(data, "bounty", targetBounty) + "% of the characters have a bounty over 315,000,000."
+  bounty.innerHTML = "Did you know that " + computeStatsBounty(data, "bounty", "315,000,000") + "% of the characters have a bounty over 315,000,000."
 
 });

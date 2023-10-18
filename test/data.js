@@ -7,11 +7,11 @@ export const names = [
 ];
 
 export const arrBounty = [
-  { facts: { bounty: 1500000000 } },
-  { facts: { bounty: 320000000 } },
-  { facts: { bounty: 66000000 } },
-  { facts: { bounty: 30000000 } },
-  { facts: { bounty: 330000000 } }
+  { facts: { bounty: "1,500,000,000" } },
+  { facts: { bounty: "320,000,000" } },
+  { facts: { bounty: "66,000,000" } },
+  { facts: { bounty: "30,000,000" } },
+  { facts: { bounty: "330,000,000" } }
 
 ];
 
@@ -30,7 +30,7 @@ export const data = [{
   description: "Buggy the Clown is the eccentric captain of the Buggy Pirates.",
   imageUrl: "https://cdn.myanimelist.net/images/characters/8/38643.jpg",
   facts: {
-    bounty: 15000000,
+    bounty: "15,000,000",
     status: "Alive",
     seaOfOrigin: "Unknown",
     crewOrigin: "Buggy Pirates"
