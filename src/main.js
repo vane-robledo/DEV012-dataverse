@@ -50,6 +50,7 @@ sortName.addEventListener("change", () => {
   const crewValue = filterCrew.value;
   const originValue = filterOrigin.value;
   const statusValue = filterStatus.value;
+  const sortOrder = sortName.value;
   if (crewValue !== "") {
     value = crewValue
     filterBy = "crewOrigin"
@@ -65,7 +66,6 @@ sortName.addEventListener("change", () => {
   }
 
   const filtered = filterData(data, filterBy, value);
-  const sortOrder = sortName.value;
   const sortedName = sortData(filtered, "name", sortOrder);
   rootRender.innerHTML = "";
   const sortedList = renderItems(sortedName);
@@ -77,10 +77,35 @@ sortName.addEventListener("change", () => {
 
 
 sortedBounty.addEventListener("change", () => {
+  let value;
+  let filterBy;
+  const crewValue = filterCrew.value;
+  const originValue = filterOrigin.value;
+  const statusValue = filterStatus.value;
   const sortOrder = sortedBounty.value;
-  const sortedName = sortBounty(data, sortOrder);
+  if (crewValue !== "") {
+    value = crewValue
+    filterBy = "crewOrigin"
+  }
+  else if (originValue !== "") {
+    value = originValue
+    filterBy = "seaOfOrigin"
+  }
+  else if (statusValue !== "") {
+    value = statusValue
+    filterBy = "status"
+
+  }
+
+  const filtered = filterData(data, filterBy, value);
+  const sortedName = sortData(filtered, "name", sortOrder);
+  let filterSortNameData;
+  if (filtered && sortedName !== " ") {
+    filterSortNameData = filtered && sortedName;  
+  }
+  const sortedBountyResult = sortBounty(filterSortNameData, sortOrder);
   rootRender.innerHTML = "";
-  const sortedList = renderItems(sortedName);
+  const sortedList = renderItems(sortedBountyResult);
   rootRender.appendChild(sortedList);
 });
 clearButton.addEventListener("click", () => {
