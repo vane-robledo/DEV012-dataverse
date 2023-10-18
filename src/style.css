@@ -128,12 +128,17 @@ p {
   text-align: center;
   font-size: 14px;
   font-weight: 200;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 h4 {
   font-family: "Rye", cursive;
   font-size: 16;
   padding-bottom: 15px;
 }
+
+
+
 footer {
   display: flex;
   justify-content: center;
@@ -143,6 +148,8 @@ footer {
   margin: 40px 0px 40px;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
+
 @media (max-width: 425px) {
   header {
     font-family: "Metal Mania", cursive;
