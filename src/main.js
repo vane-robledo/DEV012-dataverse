@@ -51,6 +51,7 @@ filterStatus.addEventListener("change", (e) => {
   e.preventDefault();
   const value = filterStatus.value;
   const filteredStatus = filterData(data, "status", value);
+
   rootRender.innerHTML = "";
   filterOrigin.value = "";
   filterCrew.value = "";
@@ -99,5 +100,5 @@ factsButton.addEventListener("click", (e) => {
   const crew = document.querySelector("#idCrew");
   crew.innerHTML = "Did you know that " + computeStats(data, "crewOrigin", "Straw Hat Pirates") + "% of the characters are from Luffy's crew (Straw Hat Pirates)."
   const bounty = document.querySelector("#idBounty");
-  bounty.innerHTML = "Did you know that " + computeStatsBounty(data, "bounty", "315,000,000") + "% of the characters have a bounty over 315,000,000."
+  bounty.innerHTML = "Did you know that " + computeStatsBounty(data, "bounty", 315000000) + "% of the characters have a bounty over 315,000,000."
 });
