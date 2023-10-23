@@ -7,8 +7,10 @@ import {
 } from "./dataFunctions.js";
 import { renderItems, renderStats } from "./view.js";
 import data from "./data/dataset.js";
+
+let result = data;
 const rootRender = document.querySelector("#root");
-rootRender.appendChild(renderItems(data));
+rootRender.appendChild(renderItems(result));
 const sortName = document.querySelector('[data-testid="select-sort"]');
 const sortedBounty = document.querySelector('[data-testid="select-bounty"]');
 const filterOrigin = document.querySelector(
@@ -21,96 +23,64 @@ const filterStatus = document.querySelector(
 const clearButton = document.querySelector('[data-testid="button-clear"]');
 const factsButton = document.getElementById("facts");
 const charactersTitle = document.querySelector("h2")
-filterOrigin.addEventListener("change", () => {
+filterOrigin.addEventListener("change", (e) => {
+  e.preventDefault();
   const value = filterOrigin.value;
   const filteredOrigin = filterData(data, "seaOfOrigin", value);
   rootRender.innerHTML = "";
+  filterCrew.value = "";
+  filterStatus.value = "";
   const filteredList = renderItems(filteredOrigin);
   rootRender.appendChild(filteredList);
+  result = filteredOrigin;
+
+
 });
-filterCrew.addEventListener("change", () => {
+filterCrew.addEventListener("change", (e) => {
+  e.preventDefault();
   const value = filterCrew.value;
   const filteredCrew = filterData(data, "crewOrigin", value);
   rootRender.innerHTML = "";
+  filterOrigin.value = "";
+  filterStatus.value = "";
   const filteredList = renderItems(filteredCrew);
   rootRender.appendChild(filteredList);
+  result = filteredCrew;
 });
-filterStatus.addEventListener("change", () => {
+filterStatus.addEventListener("change", (e) => {
+  e.preventDefault();
   const value = filterStatus.value;
   const filteredStatus = filterData(data, "status", value);
+
   rootRender.innerHTML = "";
+  filterOrigin.value = "";
+  filterCrew.value = "";
   const filteredList = renderItems(filteredStatus);
   rootRender.appendChild(filteredList);
+  result = filteredStatus;
 });
-sortName.addEventListener("change", () => {
-  let value;
-  let filterBy;
-  const crewValue = filterCrew.value;
-  const originValue = filterOrigin.value;
-  const statusValue = filterStatus.value;
+sortName.addEventListener("change", (e) => {
+  e.preventDefault();
   const sortOrder = sortName.value;
-  if (crewValue !== "") {
-    value = crewValue
-    filterBy = "crewOrigin"
-  }
-  else if (originValue !== "") {
-    value = originValue
-    filterBy = "seaOfOrigin"
-  }
-  else if (statusValue !== "") {
-    value = statusValue
-    filterBy = "status"
-  }
-  const filtered = filterData(data, filterBy, value);
-  const sortedName = sortData(filtered, "name", sortOrder);
+  const sortedName = sortData(result, "name", sortOrder);
   rootRender.innerHTML = "";
+  sortedBounty.value = "";
   const sortedList = renderItems(sortedName);
   rootRender.appendChild(sortedList);
 }
 );
-sortedBounty.addEventListener("change", () => {
-  let value;
-  let filterBy;
-  const crewValue = filterCrew.value;
-  const originValue = filterOrigin.value;
-  const statusValue = filterStatus.value;
+sortedBounty.addEventListener("change", (e) => {
+  e.preventDefault();
+
   const sortOrder = sortedBounty.value;
-  if (crewValue !== "") {
-    value = crewValue
-    filterBy = "crewOrigin"
-  }
-  else if (originValue !== "") {
-    value = originValue
-    filterBy = "seaOfOrigin"
-  }
-  else if (statusValue !== "") {
-    value = statusValue
-    filterBy = "status"
-  }
-  const filtered = filterData(data, filterBy, value);
-  const sortedName = sortData(filtered, "name", sortOrder);
-  const prueba = sortBounty(data, sortOrder)
-  let filterSortNameData;
-  if (filterSortNameData === " ") {
-    filterSortNameData = prueba;
-  }
-  if (filtered && sortedName !== " ") {
-    filterSortNameData = filtered && sortedName;
-  }
-  //seleccionar qué se renderizará
-  let renderBounty;
-  if (filterSortNameData === " ") {
-    renderBounty = prueba;
-  }
-  if (prueba === " ") {
-    renderBounty = filterSortNameData;
-  }
-  // const sortedBountyResult = sortBounty(filterSortNameData, sortOrder);
+  const sortedResultBounty = sortBounty(result, sortOrder)
   rootRender.innerHTML = "";
-  const sortedList = renderItems(renderBounty);
+  sortName.value = "";
+  const sortedList = renderItems(sortedResultBounty);
   rootRender.appendChild(sortedList);
 });
-clearButton.addEventListener("click", () => {
+clearButton.addEventListener("click", (e) => {
+  e.preventDefault();
   filterOrigin.value = "";
   filterCrew.value = "";
   filterStatus.value = "";
@@ -118,8 +88,10 @@ clearButton.addEventListener("click", () => {
   sortedBounty.value = "";
   rootRender.innerHTML = "";
   rootRender.appendChild(renderItems(data));
+  result = data;
 });
-factsButton.addEventListener("click", () => {
+factsButton.addEventListener("click", (e) => {
+  e.preventDefault();
   rootRender.innerHTML = "";
   charactersTitle.innerHTML = "Facts"
   rootRender.appendChild(renderStats());
@@ -128,5 +100,5 @@ factsButton.addEventListener("click", () => {
   const crew = document.querySelector("#idCrew");
   crew.innerHTML = "Did you know that " + computeStats(data, "crewOrigin", "Straw Hat Pirates") + "% of the characters are from Luffy's crew (Straw Hat Pirates)."
   const bounty = document.querySelector("#idBounty");
-  bounty.innerHTML = "Did you know that " + computeStatsBounty(data, "bounty", "315,000,000") + "% of the characters have a bounty over 315,000,000."
+  bounty.innerHTML = "Did you know that " + computeStatsBounty(data, "bounty", 315000000) + "% of the characters have a bounty over 315,000,000."
 });
