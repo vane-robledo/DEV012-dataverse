@@ -73,6 +73,6 @@ describe("computeStatsBounty", () => {
 
   it("percentage of characters whose bounty is over 315,000,000", () => {
 
-    expect(computeStatsBounty(arrBounty, "bounty", "315,000,000")).toStrictEqual("60.00");
+    expect(computeStatsBounty(arrBounty, "bounty", 315000000)).toStrictEqual("60.00");
   });
 });

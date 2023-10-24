@@ -22,7 +22,8 @@ const filterStatus = document.querySelector(
 );
 const clearButton = document.querySelector('[data-testid="button-clear"]');
 const factsButton = document.getElementById("facts");
-const charactersTitle = document.querySelector("h2")
+const charactersTitle = document.querySelector("h2");
+
 filterOrigin.addEventListener("change", (e) => {
   e.preventDefault();
   const value = filterOrigin.value;
@@ -51,7 +52,6 @@ filterStatus.addEventListener("change", (e) => {
   e.preventDefault();
   const value = filterStatus.value;
   const filteredStatus = filterData(data, "status", value);
-
   rootRender.innerHTML = "";
   filterOrigin.value = "";
   filterCrew.value = "";
@@ -71,7 +71,6 @@ sortName.addEventListener("change", (e) => {
 );
 sortedBounty.addEventListener("change", (e) => {
   e.preventDefault();
-
   const sortOrder = sortedBounty.value;
   const sortedResultBounty = sortBounty(result, sortOrder)
   rootRender.innerHTML = "";
@@ -96,9 +95,9 @@ factsButton.addEventListener("click", (e) => {
   charactersTitle.innerHTML = "Facts"
   rootRender.appendChild(renderStats());
   const origen = document.querySelector("#idOrigin");
-  origen.innerHTML = "Did you know that " + computeStats(data, "seaOfOrigin", "East Blue") + "% of the characters come from East Blue.";
+  origen.textContent = "Did you know that " + computeStats(data, "seaOfOrigin", "East Blue") + "% of the characters come from East Blue.";
   const crew = document.querySelector("#idCrew");
-  crew.innerHTML = "Did you know that " + computeStats(data, "crewOrigin", "Straw Hat Pirates") + "% of the characters are from Luffy's crew (Straw Hat Pirates)."
+  crew.textContent = "Did you know that " + computeStats(data, "crewOrigin", "Straw Hat Pirates") + "% of the characters are from Luffy's crew (Straw Hat Pirates)."
   const bounty = document.querySelector("#idBounty");
-  bounty.innerHTML = "Did you know that " + computeStatsBounty(data, "bounty", 315000000) + "% of the characters have a bounty over 315,000,000."
+  bounty.textContent = "Did you know that " + computeStatsBounty(data, "bounty", 315000000) + "% of the characters have a bounty over 315,000,000."
 });

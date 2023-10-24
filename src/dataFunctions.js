@@ -37,7 +37,6 @@ export const sortBounty = (data, sortOrder) => {
     const bountyB = parseInt(b.facts.bounty.replace(/[^0-9]/g, ''), 10);
     //si el orden es ascendente a bountyA se le resta bountyB y si el resultado es un numero negativo significa que B es mayor a A.
     if (sortOrder === "asc") {
-      console.log(bountyA - bountyB);
       return bountyA - bountyB;
       //si el orden es descendente a bountyB se le resta bountyA y si el resultado es un numero negativo significa que A es mayor a B.
     } else if (sortOrder === "desc") {
